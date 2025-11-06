@@ -1,0 +1,213 @@
+index.html
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contra a Xenofobia — Informe e Conscientize</title>
+  <meta name="description" content="Site educativo sobre os malefícios da xenofobia: causas, consequências e como agir." />
+  <style>
+    :root{--accent:#2b6cb0;--bg:#f7fafc;--card:#ffffff;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:var(--bg); color:#111}
+    header{background:linear-gradient(90deg, rgba(43,108,176,0.12), rgba(66,153,225,0.06)); padding:24px 16px; border-bottom:1px solid rgba(0,0,0,0.04)}
+    .container{max-width:1000px;margin:0 auto;padding:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:52px;height:52px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav{margin-top:12px}
+    .tabs{display:flex;gap:8px;flex-wrap:wrap}
+    .tab{background:transparent;border:2px solid transparent;padding:8px 12px;border-radius:10px;cursor:pointer;font-weight:600}
+    .tab[aria-selected="true"]{background:var(--card);border-color:var(--accent);box-shadow:0 6px 18px rgba(43,108,176,0.12)}
+    main{padding:24px 16px}
+    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(9,9,9,0.03);margin-bottom:18px}
+    h1,h2{margin:0 0 12px}
+    p{color:var(--muted);line-height:1.55}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr} .tabs{overflow-x:auto}}
+    ul{margin:0;padding-left:20px}
+    footer{padding:20px 16px;text-align:center;color:var(--muted)}
+    .actions{display:flex;gap:8px}
+    .btn{background:var(--accent);color:white;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
+    .link{color:var(--accent);text-decoration:none}
+    blockquote{border-left:4px solid rgba(43,108,176,0.2);margin:12px 0;padding:8px 12px;background:#fbfdff}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="brand">
+        <div class="logo">X</div>
+        <div>
+          <div style="font-weight:800;font-size:18px">Contra a Xenofobia</div>
+          <div style="font-size:13px;color:var(--muted)">Informar — Humanizar — Agir</div>
+        </div>
+      </div>
+      <nav aria-label="Navegação principal" style="margin-top:16px">
+        <div class="tabs" role="tablist" aria-label="Abas do site" id="tablist">
+          <button class="tab" role="tab" aria-selected="true" id="tab-home" aria-controls="panel-home">Início</button>
+          <button class="tab" role="tab" aria-selected="false" id="tab-oque" aria-controls="panel-oque">O que é</button>
+          <button class="tab" role="tab" aria-selected="false" id="tab-efeitos" aria-controls="panel-efeitos">Efeitos</button>
+          <button class="tab" role="tab" aria-selected="false" id="tab-historias" aria-controls="panel-historias">Histórias</button>
+          <button class="tab" role="tab" aria-selected="false" id="tab-recursos" aria-controls="panel-recursos">Recursos</button>
+          <button class="tab" role="tab" aria-selected="false" id="tab-contato" aria-controls="panel-contato">Contato</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      <section aria-live="polite">
+        <article id="panel-home" class="card" role="tabpanel" aria-labelledby="tab-home">
+          <h1>Por que combater a xenofobia?</h1>
+          <p>A xenofobia — medo, rejeição ou hostilidade a pessoas de outros países ou culturas — prejudica indivíduos, comunidades e sociedades inteiras. Este site reúne explicações, dados e ações práticas para entender o problema e ajudar a mudar atitudes.</p>
+          <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+            <button class="btn" onclick="openTab('panel-recursos')">Como Ajudar</button>
+            <a class="link" href="#panel-historias">Ler histórias reais</a>
+          </div>
+        </article>
+
+        <article id="panel-oque" class="card" role="tabpanel" aria-labelledby="tab-oque" hidden>
+          <h2>O que é xenofobia?</h2>
+          <p>Xenofobia é um comportamento que pode variar de linguagem discriminatória e exclusão social até violência física e políticas públicas excludentes. Ela se alimenta de estereótipos, desinformação e medo do outro.</p>
+          <h3>Principais causas</h3>
+          <ul>
+            <li>Desinformação e mitos sobre migração.</li>
+            <li>Crises econômicas e busca por bodes expiatórios.</li>
+            <li>Políticas e líderes que exploram o medo do diferente.</li>
+          </ul>
+        </article>
+
+        <article id="panel-efeitos" class="card" role="tabpanel" aria-labelledby="tab-efeitos" hidden>
+          <h2>Consequências para pessoas e sociedades</h2>
+          <p>Os efeitos da xenofobia são profundos:</p>
+          <ul>
+            <li><strong>Saúde mental:</strong> ansiedade, depressão, trauma.</li>
+            <li><strong>Economia:</strong> perda de produtividade, desperdício de talentos.</li>
+            <li><strong>Coesão social:</strong> aumento da violência e da polarização.</li>
+            <li><strong>Direitos humanos:</strong> práticas discriminatórias e violações.</li>
+          </ul>
+          <blockquote>"A hostilidade ao outro é sempre uma perda — humana, moral e econômica."</blockquote>
+        </article>
+
+        <article id="panel-historias" class="card" role="tabpanel" aria-labelledby="tab-historias" hidden>
+          <h2>Histórias reais</h2>
+          <p>Aqui você encontra depoimentos (fictícios para fins educativos) que ilustram como a xenofobia afeta vidas:</p>
+          <ul>
+            <li><strong>María</strong>: refugiada que enfrentou violência verbal e dificuldades de acesso ao trabalho.</li>
+            <li><strong>Ali</strong>: profissional qualificado que teve seu diploma desprezado por preconceito cultural.</li>
+            <li><strong>Ana</strong>: adolescente que testemunhou bullying xenófobo na escola e se tornou ativista.</li>
+          </ul>
+        </article>
+
+        <article id="panel-recursos" class="card" role="tabpanel" aria-labelledby="tab-recursos" hidden>
+          <h2>Recursos e como agir</h2>
+          <p>Pequenas ações somam:</p>
+          <ul>
+            <li>Eduque-se: busque fontes confiáveis sobre migração e cultura.</li>
+            <li>Intervenha com segurança: quando presenciar xenofobia, apoie a vítima e registre o ocorrido.</li>
+            <li>Vote e mobilize: apoie políticas inclusivas e organizações que protegem direitos.</li>
+          </ul>
+          <p>Organizações úteis: <a class="link" href="#">ONGs de apoio a migrantes</a>, centros comunitários e linhas de denúncia locais.</p>
+        </article>
+
+        <article id="panel-contato" class="card" role="tabpanel" aria-labelledby="tab-contato" hidden>
+          <h2>Contato e Compartilhe</h2>
+          <p>Se quiser enviar uma história, recurso ou sugestão, use o formulário ao lado (opção simplificada) ou escreva para <a class="link" href="mailto:contato@contraaxenofobia.org">contato@contraaxenofobia.org</a>.</p>
+          <form onsubmit="event.preventDefault(); alert('Obrigado! Sua mensagem foi recebida (demo).');" style="margin-top:12px;display:flex;flex-direction:column;gap:8px;">
+            <input required placeholder="Seu nome" aria-label="Nome" style="padding:8px;border-radius:8px;border:1px solid #e6e6e6" />
+            <input required type="email" placeholder="Seu e‑mail" aria-label="E-mail" style="padding:8px;border-radius:8px;border:1px solid #e6e6e6" />
+            <textarea required placeholder="Sua mensagem" aria-label="Mensagem" rows="4" style="padding:8px;border-radius:8px;border:1px solid #e6e6e6"></textarea>
+            <div style="display:flex;justify-content:flex-end"><button class="btn" type="submit">Enviar</button></div>
+          </form>
+        </article>
+      </section>
+
+      <aside>
+        <div class="card">
+          <h3>Dados-chave</h3>
+          <p>Estudos mostram que intolerância e discriminação têm custo social e geram exclusão de talentos. Educar e integrar são estratégias eficazes para enfrentar o problema.</p>
+          <h4 style="margin-top:12px">Como usar este site</h4>
+          <ol style="padding-left:18px;margin:8px 0">
+            <li>Use as abas para navegar pelos temas.</li>
+            <li>Compartilhe recursos nas redes sociais.</li>
+            <li>Procure apoio local se presenciar ou sofrer xenofobia.</li>
+          </ol>
+        </div>
+
+        <div class="card">
+          <h3>Material para baixar</h3>
+          <p>Cartaz, folheto informativo e guias rápidos (versões demo inseridas no site para personalização).</p>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button class="btn" onclick="alert('Download demo: folheto.pdf');">Folheto</button>
+            <button class="btn" onclick="alert('Download demo: cartaz.pdf');">Cartaz</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Compartilhe</h3>
+          <p>Ajude a espalhar: um post com fatos e empatia pode mudar opiniões.</p>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button class="btn" onclick="share()">Compartilhar</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Contra a Xenofobia — Site educativo. Conteúdo para fins de divulgação.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Acessibilidade e lógica das abas
+    const tabs = document.querySelectorAll('[role="tab"]');
+    const panels = document.querySelectorAll('[role="tabpanel"]');
+
+    function openTab(panelId){
+      panels.forEach(p=>{
+        if(p.id===panelId){ p.hidden=false; } else { p.hidden=true; }
+      });
+      tabs.forEach(t=>{
+        const controls = t.getAttribute('aria-controls');
+        const target = controls || t.id.replace('tab-','panel-');
+        t.setAttribute('aria-selected', (target===panelId).toString());
+      });
+      // foco para leitores de tela
+      document.getElementById(panelId).focus?.();
+    }
+
+    tabs.forEach(t=>{
+      t.addEventListener('click', ()=>{
+        const panel = t.getAttribute('aria-controls');
+        openTab(panel);
+      });
+      t.addEventListener('keydown', (e)=>{
+        const curIndex = Array.from(tabs).indexOf(document.activeElement);
+        if(e.key === 'ArrowRight') tabs[(curIndex+1)%tabs.length].focus();
+        if(e.key === 'ArrowLeft') tabs[(curIndex-1+tabs.length)%tabs.length].focus();
+      });
+    });
+
+    // Inicializa com a aba Início visível
+    openTab('panel-home');
+
+    // Atualiza ano no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function share(){
+      const text = encodeURIComponent('Conheça os malefícios da xenofobia e como agir: Contra a Xenofobia');
+      const url = encodeURIComponent(location.href);
+      // tenta Web Share API
+      if(navigator.share){
+        navigator.share({title:document.title,text:url}).catch(()=>{});
+      } else {
+        window.open(`https://twitter.com/intent/tweet?text=${text}%20${url}`,'_blank');
+      }
+    }
+  </script>
+</body>
+</html>
+
